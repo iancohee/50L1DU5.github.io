@@ -11,7 +11,7 @@ jQuery(function($, undefined) {
 				'\thelp      this menu\n' +
 				'\tls        list objects\n' +
 				'\topen      open object\n\n\n' +
-				'Besides that, you can run JavaScript in\nthe console!'
+				'This console can also run JavaScript.'
 			);	
 		} else if (command === 'ls') {
 			this.echo(
@@ -90,7 +90,7 @@ SVB3jv9Clq0yZwfD+PGkmoQ/e+f50ojUvCjTLg4E07tcvw==
 -----END PGP PUBLIC KEY BLOCK-----
 			`);
 		} else if (command.match('open|cd|cat\\s+README.*') !== null) {
-			this.echo(`About me:`);
+			this.echo("Coming soon!");
 		} else if (command.match('open|cd|cat\\s+index.*') !== null) {
 			window.open('.', '_parent');
 		} else if (command.match('open|cd|cat|ls\\s+resume.*') !== null) {
