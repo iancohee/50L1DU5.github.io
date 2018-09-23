@@ -1,22 +1,13 @@
 body {
-  background-color: #010101;
-  color: #010101;
-  text-align: left;
-  font-family: courier;
-  font-size: 1.5em;
-  margin: 1em; }
+  background-color: black;
+  color: white;
+  font-family: courier; }
 
 nav {
+  text-size: 2em;
   text-align: center;
-  border: 1px solid #010101;
-  padding: 1em;
-  margin: 1em; }
-
-section {
-  background-color: white;
-  border: 1px solid #010101;
-  padding: 1em;
-  margin: 1em; }
+  padding: 10px;
+  display: inline; }
 
 .nav-link {
   text-decoration: none;
@@ -26,6 +17,8 @@ section {
   text-decoration: none;
   color: red; }
 
-#console {
-  height: 300px;
-  border: 1px solid #fefefe; }
+footer {
+  border-top: 1px solid white;
+  margin-top: 5px;
+  padding-top: 10px;
+  width: 50%; }

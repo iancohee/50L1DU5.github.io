@@ -7,16 +7,15 @@
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script> 
 
 	<script src="assets/js/jquery.terminal-1.23.2.min.js"></script>
-
-<-- With modern browsers, jQuery mousewheel is not actually needed; scrolling will still work -->
-<!-- <script src="assets/js/jquery.mousewheel-min.js"></script> -->
-
-<!-- jquery.terminal-1.23.2.css -->
 <link href="assets/css/jquery.terminal-1.23.2.css" rel="stylesheet"/>
 
 </head>
 <body>
-	<nav>
+	<div id="console"></div>
+<script src="assets/js/console.js"></script>
+
+	<footer>
+	Or, if you're not into the whole console-thingy: <nav>
 	
 	<a 
 		href="/"
@@ -42,8 +41,6 @@
 	
 </nav>
 
-	<div id="console"></div>
-<script src="assets/js/console.js"></script>
-
+	</footer>
 </body>
 </html>
