@@ -22,9 +22,9 @@ jQuery(function($, undefined) {
 				'-rw-r--r-- cohee guest [[b;green;black]index.html]\n' +
 				'drw-r--r-- cohee guest [[b;blue;black]resume]/\n'
 			); 
-		} else if (command.match('[open|cd|cat]\\s+\.secrets.*') !== null) {
+		} else if (command.match('open|cd|cat\\s+\.secrets.*') !== null) {
 			this.echo('open: .secrets.txt: [[b;red;black]Permission denied]');
-		} else if (command.match('[open|cd|cat]\\s+.*gpg.*') !== null) {
+		} else if (command.match('open|cd|cat\\s+.*gpg.*') !== null) {
 			this.echo(`
 				-----BEGIN PGP PUBLIC KEY BLOCK-----
 				
@@ -89,13 +89,13 @@ jQuery(function($, undefined) {
 				=0eOf
 				-----END PGP PUBLIC KEY BLOCK-----
 			`);
-		} else if (command.match('[open|cd|cat]\\s+README.*') !== null) {
+		} else if (command.match('open|cd|cat\\s+README.*') !== null) {
 			this.echo(`About me:`);
-		} else if (command.match('[open|cd|cat]\\s+index.*') !== null) {
+		} else if (command.match('open|cd|cat\\s+index.*') !== null) {
 			window.open('.', '_parent');
-		} else if (command.match('[open|cd|cat]\\s+resume.*') !== null) {
+		} else if (command.match('open|cd|cat\\s+resume.*') !== null) {
 			window.open('http://cohee.tech/resume', '_blank');
-		} else if (command.match('[exit|quit]') !== null) {
+		} else if (command === 'exit' || command === 'quit') {
 			window.open('https://www.google.com/', '_parent');
 		} else if (command === '') {
 			this.echo('');
