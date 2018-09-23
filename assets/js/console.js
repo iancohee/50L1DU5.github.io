@@ -1,16 +1,14 @@
 jQuery(function($, undefined) {
 	$('#console').terminal(function(command) {
 		console.log('command: ' + command)
-		if (command === 'help') {
+		if (command.match('.*help.*') !== null) {
 			this.echo(
 				'Available commands:\n\n' +
-				'\tcat       alias for open\n' +
-				'\tcd        alias for open\n' +
+				'\tcat       display file contents\n' +
 				'\tclear     clear console output\n' +
 				'\texit      log out\n' +
 				'\thelp      this menu\n' +
 				'\tls        list objects\n' +
-				'\topen      open object\n\n\n' +
 				'This console can also run JavaScript.'
 			);	
 		} else if (command === 'ls') {
@@ -22,9 +20,9 @@ jQuery(function($, undefined) {
 				'-rw-r--r-- cohee guest [[b;green;black]index.html]\n' +
 				'lrwxrwxrwx cohee guest [[b;cyan;black]resume] -> [[b;blue;black]cohee.tech/resume/]\n'
 			); 
-		} else if (command.match('open|cd|cat\\s+\.secrets.*') !== null) {
+		} else if (command.match('\\s*cat\\s+\.secrets.txt') !== null) {
 			this.echo('open: .secrets.txt: [[b;red;black]Permission denied]');
-		} else if (command.match('open|cd|cat\\s+.*gpg.*') !== null) {
+		} else if (command.match('\\s*cat\\s+gpg.pub.asc') !== null) {
 			this.echo(`
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 
@@ -89,13 +87,13 @@ SVB3jv9Clq0yZwfD+PGkmoQ/e+f50ojUvCjTLg4E07tcvw==
 =0eOf
 -----END PGP PUBLIC KEY BLOCK-----
 			`);
-		} else if (command.match('open|cd|cat\\s+README.*') !== null) {
+		} else if (command.match('\\s*cat\\s+README.txt') !== null) {
 			this.echo("Coming soon!");
-		} else if (command.match('open|cd|cat\\s+index.*') !== null) {
+		} else if (command.match('\\s*cat\\s+index.html') !== null) {
 			window.open('.', '_parent');
-		} else if (command.match('open|cd|cat|ls\\s+resume.*') !== null) {
+		} else if (command.match('\\s*(cat|cd)\\s+resume') !== null) {
 			window.open('http://cohee.tech/resume', '_blank');
-		} else if (command === 'exit' || command === 'quit') {
+		} else if (command === '\\s*exit' || command === '\\s*quit') {
 			window.open('https://www.google.com/', '_parent');
 		} else if (command === '') {
 			this.echo('');
