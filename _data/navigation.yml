@@ -1,0 +1,5 @@
+- name: Home
+  link: /
+
+- name: Resume
+  link: http://cohee.tech/resume

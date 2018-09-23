@@ -1,0 +1,32 @@
+body {
+	background-color: #010101;
+	color: #010101;
+	text-align: left;
+	font-family: courier;
+	font-size: 1.5em;
+	margin: 1em;
+}
+nav {
+	text-align: center;
+	border: 1px solid #010101;
+	padding: 1em;
+	margin: 1em;
+}
+section {
+	background-color: white;
+	border: 1px solid #010101;
+	padding: 1em;
+	margin: 1em;
+}
+.nav-link {
+	text-decoration: none;	
+	color: white;
+}
+.current {
+	text-decoration: none;	
+	color: red;
+}
+#console {
+	height: 300px;
+	border: 1px solid #010101;
+}

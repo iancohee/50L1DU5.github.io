@@ -1,0 +1,17 @@
+<nav>
+	{% for item in site.data.navigation %}
+	<a 
+		href="{{ item.link }}"
+		{% if item.name == "Resume" %}
+    			target="_blank"
+		{% endif %}
+       		{% if page.url == item.link %}
+       			class="current"
+	  	{% else %}
+	  		class="nav-link"
+	  	{% endif %}
+	>
+		{{ item.name }}
+	</a>
+	{% endfor %}
+</nav>

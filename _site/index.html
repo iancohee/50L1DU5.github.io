@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<link rel="stylesheet" href="assests/css/styles.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/1.23.2/js/jquery.terminal.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.terminal/1.23.2/css/jquery.terminal.min.css" rel="stylesheet"/>
+
+</head>
+<body>
+	<nav>
+	
+	<a 
+		href="/"
+		
+       		
+       			class="current"
+	  	
+	>
+		Home
+	</a>
+	
+	<a 
+		href="http://cohee.tech/resume"
+		
+    			target="_blank"
+		
+       		
+	  		class="nav-link"
+	  	
+	>
+		Resume
+	</a>
+	
+</nav>
+
+	<div id="console"></div>
+<script>
+jQuery(function($, undefined) {
+	$('#console').terminal(function(command) {
+		console.log('command: ' + command)
+		if (command === 'help') {
+			this.echo(
+				'Available commands:\n\n' +
+				'\thelp      this menu\n' +
+				'\tls        list pages\n' +
+				'\topen      open page\n' +
+				'\tcd        alias for "open"\n'
+			);	
+		} else if (command === 'ls') {
+			this.echo(
+				'total 3\n' +
+				'-rw-r--r-- cohee guest [[b;blue;black]README.txt]\n' +
+				'-rw-r--r-- cohee guest [[b;blue;black]index.html]\n' +
+				'-rw-r--r-- cohee guest [[b;blue;black]resume.html]\n'
+			); 
+		} else if (command.match('[open|cd]\\s+resume.*') !== null) {
+			window.open('http://cohee.tech/resume', '_blank');
+		} else if (command.match('[open|cd]\\s+index.*') !== null) {
+			window.open('.', '_parent');
+		} else if (command === '') {
+			this.echo('');
+		} else {
+			try {
+				eval(command)
+			} catch(err) {
+				console.log('User error: ' + err)
+				this.echo(
+					'[[b;red;black]Nuh uh, you didn\'t say the magic word.]\n',
+					{finalize: function(div) {div.css("color", "red");}}
+				);
+			}
+		}
+	}, {
+		greetings: '[ Welcome to my Page. Type "help" to begin. ]\n' +
+		           '[                                 [[gb;red;black]<3] ~ Ian  ]\n',
+		name: 'home_console',
+		height: 500,
+		prompt: '[[b;white;black]cohee.tech][[b;green;black]$] '
+	});
+});
+</script>
+
+</body>
+</html>
