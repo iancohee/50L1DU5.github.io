@@ -25,3 +25,7 @@ section {
 .current {
   text-decoration: none;
   color: red; }
+
+#console {
+  height: 300px;
+  border: 1px solid #fefefe; }
