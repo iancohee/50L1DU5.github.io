@@ -8,7 +8,7 @@ jQuery(function($, undefined) {
 				'\tclear     clear console output\n' +
 				'\texit      log out\n' +
 				'\thelp      this menu\n' +
-				'\tls        list objects\n' +
+				'\tls        list files\n\n' +
 				'This console can also run JavaScript.'
 			);	
 		} else if (command === 'ls') {
