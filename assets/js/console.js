@@ -109,10 +109,10 @@ SVB3jv9Clq0yZwfD+PGkmoQ/e+f50ojUvCjTLg4E07tcvw==
 			}
 		}
 	}, {
-		greetings: 'Connecting... connection successful.\n' +
+		greetings: 'Connecting... connection established.\n\n' +
 			'Logged in as guest.\n\n' +
 			'[ Welcome to my Page. Type "[[b;white;black]help]" to begin. ]\n' +
-		        '[                                 [[gb;red;black]<3] ~ Ian  ]\n',
+		        '[                                 [[gb;red;black]<3] Ian    ]\n',
 		name: 'home_console',
 		height: 500,
 		prompt: '[[b;white;black]guest][[b;green;black]>] '
