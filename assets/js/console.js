@@ -18,7 +18,7 @@ jQuery(function($, undefined) {
 				'-rw-r--r-- cohee guest gpg.pub.asc\n' +
 				'-rw-r--r-- cohee guest README.txt\n' +
 				'-rw-r--r-- cohee guest [[b;green;black]index.html]\n' +
-				'lrwxrwxrwx cohee guest [[b;cyan;black]resume] -> [[b;blue;black]cohee.tech/resume/]\n'
+				'lrwxrwxrwx cohee guest [[b;cyan;black]resume] -> [[b;blue;black]cohee.website/resume/]\n'
 			); 
 		} else if (command.match('\\s*cat\\s+\.secrets.txt') !== null) {
 			this.echo('open: .secrets.txt: [[b;red;black]Permission denied]');
@@ -92,7 +92,7 @@ SVB3jv9Clq0yZwfD+PGkmoQ/e+f50ojUvCjTLg4E07tcvw==
 		} else if (command.match('\\s*cat\\s+index.html') !== null) {
 			window.open('.', '_parent');
 		} else if (command.match('\\s*(cat|cd)\\s+resume') !== null) {
-			window.open('http://cohee.tech/resume', '_blank');
+			window.open('http://cohee.website/resume', '_blank');
 		} else if (command === '\\s*exit' || command === '\\s*quit') {
 			window.open('https://www.google.com/', '_parent');
 		} else if (command === '') {
